@@ -82,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="res\icon.ico" />
-    <Content Include="res\readme.txt" />
     <Compile Include="background\CxStockOrderUpdater.cs" />
     <Compile Include="background\CxStockUpdater.cs" />
     <Compile Include="core\TxMisc.cs" />
