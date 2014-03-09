@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D4CFEB4-9454-4445-8FC1-3ADD800F0BA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>org.auroracoin.desktop</RootNamespace>
+    <AssemblyName>AurDesktop</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>res\icon.ico</ApplicationIcon>
+    <StartupObject>org.auroracoin.desktop.core.CxStart</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MILHTMLParser">
+      <HintPath>..\lib\MILHTMLParser.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\lib\system.data.sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>..\lib\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\icon.ico" />
+    <Content Include="res\readme.txt" />
+    <Compile Include="background\CxStockOrderUpdater.cs" />
+    <Compile Include="background\CxStockUpdater.cs" />
+    <Compile Include="core\TxMisc.cs" />
+    <Compile Include="core\TxDeskUtil.cs" />
+    <Compile Include="core\CxCryptor.cs" />
+    <Compile Include="core\CxDeskUtil.cs" />
+    <Compile Include="core\CxGlobal.cs" />
+    <Compile Include="core\CxStart.cs" />
+    <Compile Include="core\TxCryptor.cs" />
+    <Compile Include="ui\FxGameReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxGameReport.Designer.cs">
+      <DependentUpon>FxGameReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxInput.designer.cs">
+      <DependentUpon>FxInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxBuySell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxUser.Designer.cs">
+      <DependentUpon>FxUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ExListOrderType.cs" />
+    <Compile Include="ui\FxListOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxListOrders.Designer.cs">
+      <DependentUpon>FxListOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxHiLoChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxHiLoChart.Designer.cs">
+      <DependentUpon>FxHiLoChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxTradeOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxTradeOrders.Designer.cs">
+      <DependentUpon>FxTradeOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxConfig.Designer.cs">
+      <DependentUpon>FxConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxStockDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxStockDetail.Designer.cs">
+      <DependentUpon>FxStockDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxAbout.Designer.cs">
+      <DependentUpon>FxAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\FxMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FxMain.Designer.cs">
+      <DependentUpon>FxMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="res\stockalert.wav" />
+    <EmbeddedResource Include="ui\FxStockDetail.resx">
+      <DependentUpon>FxStockDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxAbout.resx">
+      <DependentUpon>FxAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxMain.resx">
+      <DependentUpon>FxMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ui\CxUiUtil.cs" />
+    <Compile Include="ui\CxListViewColumnSorter.cs" />
+    <Compile Include="ui\FxBuySell.Designer.cs">
+      <DependentUpon>FxBuySell.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ui\FxGameReport.resx">
+      <DependentUpon>FxGameReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxInput.resx">
+      <DependentUpon>FxInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxBuySell.resx">
+      <DependentUpon>FxBuySell.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxUser.resx">
+      <DependentUpon>FxUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxListOrders.resx">
+      <DependentUpon>FxListOrders.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxHiLoChart.resx">
+      <DependentUpon>FxHiLoChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxTradeOrders.resx">
+      <DependentUpon>FxTradeOrders.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FxConfig.resx">
+      <DependentUpon>FxConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="icon.ico" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AurCore\AurCore.csproj">
+      <Project>{5720f4cb-d262-401a-9c87-f524ddee347b}</Project>
+      <Name>AurCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
