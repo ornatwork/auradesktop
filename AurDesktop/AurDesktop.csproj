@@ -73,9 +73,6 @@
     <Reference Include="nunit.framework">
       <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\lib\system.data.sqlite.dll</HintPath>
-    </Reference>
     <Reference Include="ZedGraph">
       <HintPath>..\lib\ZedGraph.dll</HintPath>
     </Reference>
@@ -234,12 +231,6 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AurCore\AurCore.csproj">
-      <Project>{5720f4cb-d262-401a-9c87-f524ddee347b}</Project>
-      <Name>AurCore</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
@@ -260,6 +251,12 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AurCore\AurCore.csproj">
+      <Project>{5720f4cb-d262-401a-9c87-f524ddee347b}</Project>
+      <Name>AurCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

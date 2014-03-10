@@ -38,10 +38,6 @@
             this.mnuBuy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSell = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlOpenOrders = new System.Windows.Forms.Panel();
-            this.lbSellsShares = new System.Windows.Forms.Label();
-            this.lbSells = new System.Windows.Forms.Label();
-            this.lbBuysShares = new System.Windows.Forms.Label();
-            this.lbBuys = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lvOrders = new System.Windows.Forms.ListView();
             this.pnlExecuted = new System.Windows.Forms.Panel();
@@ -105,10 +101,6 @@
             // 
             // pnlOpenOrders
             // 
-            this.pnlOpenOrders.Controls.Add(this.lbSellsShares);
-            this.pnlOpenOrders.Controls.Add(this.lbSells);
-            this.pnlOpenOrders.Controls.Add(this.lbBuysShares);
-            this.pnlOpenOrders.Controls.Add(this.lbBuys);
             this.pnlOpenOrders.Controls.Add(this.label1);
             this.pnlOpenOrders.Controls.Add(this.lvOrders);
             this.pnlOpenOrders.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -116,42 +108,6 @@
             this.pnlOpenOrders.Name = "pnlOpenOrders";
             this.pnlOpenOrders.Size = new System.Drawing.Size(690, 233);
             this.pnlOpenOrders.TabIndex = 5;
-            // 
-            // lbSellsShares
-            // 
-            this.lbSellsShares.AutoSize = true;
-            this.lbSellsShares.Location = new System.Drawing.Point(275, 6);
-            this.lbSellsShares.Name = "lbSellsShares";
-            this.lbSellsShares.Size = new System.Drawing.Size(19, 13);
-            this.lbSellsShares.TabIndex = 10;
-            this.lbSellsShares.Text = "----";
-            // 
-            // lbSells
-            // 
-            this.lbSells.AutoSize = true;
-            this.lbSells.Location = new System.Drawing.Point(239, 6);
-            this.lbSells.Name = "lbSells";
-            this.lbSells.Size = new System.Drawing.Size(32, 13);
-            this.lbSells.TabIndex = 9;
-            this.lbSells.Text = "Sells:";
-            // 
-            // lbBuysShares
-            // 
-            this.lbBuysShares.AutoSize = true;
-            this.lbBuysShares.Location = new System.Drawing.Point(125, 6);
-            this.lbBuysShares.Name = "lbBuysShares";
-            this.lbBuysShares.Size = new System.Drawing.Size(19, 13);
-            this.lbBuysShares.TabIndex = 7;
-            this.lbBuysShares.Text = "----";
-            // 
-            // lbBuys
-            // 
-            this.lbBuys.AutoSize = true;
-            this.lbBuys.Location = new System.Drawing.Point(89, 6);
-            this.lbBuys.Name = "lbBuys";
-            this.lbBuys.Size = new System.Drawing.Size(33, 13);
-            this.lbBuys.TabIndex = 6;
-            this.lbBuys.Text = "Buys:";
             // 
             // label1
             // 
@@ -292,10 +248,6 @@
         private System.Windows.Forms.Panel pnlOpenOrders;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lvOrders;
-        private System.Windows.Forms.Label lbSellsShares;
-        private System.Windows.Forms.Label lbSells;
-        private System.Windows.Forms.Label lbBuysShares;
-        private System.Windows.Forms.Label lbBuys;
         private System.Windows.Forms.Panel pnlExecuted;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView lvExecuted;

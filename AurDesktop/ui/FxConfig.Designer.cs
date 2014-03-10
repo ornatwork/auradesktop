@@ -65,6 +65,7 @@
             // 
             // txOsUserName
             // 
+            this.txOsUserName.Enabled = false;
             this.txOsUserName.Location = new System.Drawing.Point(14, 27);
             this.txOsUserName.Name = "txOsUserName";
             this.txOsUserName.Size = new System.Drawing.Size(152, 20);
@@ -73,6 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
@@ -81,6 +83,7 @@
             // 
             // txOsPassword
             // 
+            this.txOsPassword.Enabled = false;
             this.txOsPassword.Location = new System.Drawing.Point(13, 65);
             this.txOsPassword.Name = "txOsPassword";
             this.txOsPassword.PasswordChar = '*';
@@ -90,6 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(11, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -141,6 +145,7 @@
             // 
             // btConfirmOsLogin
             // 
+            this.btConfirmOsLogin.Enabled = false;
             this.btConfirmOsLogin.Location = new System.Drawing.Point(171, 64);
             this.btConfirmOsLogin.Name = "btConfirmOsLogin";
             this.btConfirmOsLogin.Size = new System.Drawing.Size(64, 21);

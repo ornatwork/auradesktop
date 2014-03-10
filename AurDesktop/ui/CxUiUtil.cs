@@ -131,12 +131,8 @@ namespace org.auroracoin.desktop.ui
 
             // Last Exec
             lvsi = new ListViewItem.ListViewSubItem();
-            lvsi.Text = pxStock.LastTrade.ToString(CxUtil.FORMAT_PRICE);
-            lvi.SubItems.Add(lvsi);
-
-            // Open
-            lvsi = new ListViewItem.ListViewSubItem();
-            lvsi.Text = pxStock.Open.ToString(CxUtil.FORMAT_PRICE);
+            if (pxStock.LastTrade > 0)
+                lvsi.Text = pxStock.LastTrade.ToString(CxUtil.FORMAT_PRICE);
             lvi.SubItems.Add(lvsi);
 
             // Volume
@@ -361,9 +357,11 @@ namespace org.auroracoin.desktop.ui
 
             // DateTime
             lvsi = new ListViewItem.ListViewSubItem();
-            if (pxBuy.Price > 0) lvsi.Text = pxBuy.AsOf.ToString(CxUtil.DATE_FORMAT + "  " + CxUtil.TIME_FORMAT );
+            if (pxBuy.Price > 0 && pxBuy.AsOf != DateTime.MinValue ) 
+                lvsi.Text = pxBuy.AsOf.ToString(CxUtil.DATE_FORMAT + "  " + CxUtil.TIME_FORMAT);
             lvsi.ForeColor = pColor;
             lvi.SubItems.Add(lvsi);
+            
             
 
             // Seperator
@@ -384,17 +382,17 @@ namespace org.auroracoin.desktop.ui
 
             // Shares
             lvsi = new ListViewItem.ListViewSubItem();
-            if (pxSell.Price > 0) lvsi.Text = pxSell.Shares.ToString(CxUtil.FORMAT_INT);
+            if (pxSell.Price > 0) lvsi.Text = pxSell.Shares.ToString(CxUtil.FORMAT_PRICE);
             lvsi.ForeColor = pColor; 
             lvi.SubItems.Add(lvsi);
             
-            
-            // DateTime
+
+            // Time 
             lvsi = new ListViewItem.ListViewSubItem();
-            if (pxSell.Price > 0) lvsi.Text = pxSell.AsOf.ToString( CxUtil.DATE_FORMAT + "  " + CxUtil.TIME_FORMAT );
-            lvsi.ForeColor = pColor; 
+            if (pxSell.Price > 0 && pxSell.AsOf != DateTime.MinValue ) 
+                lvsi.Text = pxSell.AsOf.ToString(CxUtil.DATE_FORMAT + "  " + CxUtil.TIME_FORMAT);
+            lvsi.ForeColor = pColor;
             lvi.SubItems.Add(lvsi);
-            
 
             return lvi;
         }

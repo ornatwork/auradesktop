@@ -180,7 +180,7 @@ namespace org.auroracoin.desktop.ui
             ColumnHeader colHead;
             
             colHead = new ColumnHeader();
-            colHead.Text = "Exchange" + CxUtil.ASCENDING_ARROW;
+            colHead.Text = "Exchange";
             colHead.Width = CxIniFile.getInstance().readIntKey( this.lvStocks.Name + "_0", 55);
             this.lvStocks.Columns.Add(colHead);
 
@@ -214,15 +214,9 @@ namespace org.auroracoin.desktop.ui
             this.lvStocks.Columns.Add(colHead);
 
             colHead = new ColumnHeader();
-            colHead.Text = "Open";
+            colHead.Text = "Volume" + CxUtil.DESCENDING_ARROW;
             colHead.TextAlign = HorizontalAlignment.Right;
             colHead.Width = CxIniFile.getInstance().readIntKey(this.lvStocks.Name + "_6", 65);
-            this.lvStocks.Columns.Add(colHead);
-
-            colHead = new ColumnHeader();
-            colHead.Text = "Volume";
-            colHead.TextAlign = HorizontalAlignment.Right;
-            colHead.Width = CxIniFile.getInstance().readIntKey(this.lvStocks.Name + "_7", 65);
             this.lvStocks.Columns.Add(colHead);
 
 
@@ -400,14 +394,14 @@ namespace org.auroracoin.desktop.ui
             // Stock grid 
             // ------------------
             // Set the column number that is to be sorted; default to ascending.
-            lvwColumnSorter.SortColumn = 0;
-            lvwColumnSorter.Order = SortOrder.Ascending;
+            lvwColumnSorter.SortColumn = 6;
+            lvwColumnSorter.Order = SortOrder.Descending;
             //
             this.lvStocks.BeginUpdate();
                 // Perform the sort with these new sort options.
                 this.lvStocks.Sort();
                 CxUiUtil.shadeGrid(this.lvStocks);
-                CxUiUtil.setArrow(this.lvStocks, 0, lvwColumnSorter.Order );
+                CxUiUtil.setArrow(this.lvStocks, 6, lvwColumnSorter.Order );
             this.lvStocks.EndUpdate();
             this.lvStocks.Refresh();
 
@@ -1113,6 +1107,7 @@ namespace org.auroracoin.desktop.ui
                     this.TopMost = false;
 
                     // Show 
+                    this.showMe();
                     this.tpPanel.SelectedIndex = FxMain.ALERT_TAB;
 
                     this.lbAlertMsg.Text = "Last three trades on Cryptsy average price = " + CxGlobal.LastThreeCryptsyTrades.ToString(CxUtil.FORMAT_PRICE);

@@ -21,9 +21,8 @@ namespace org.auroracoin.aurcore.stocks
     {
 
         //
-        public ExExchange mxExchange = ExExchange.CryptoRush;
-        //
-        private string msSymbol = "AUR";
+        public ExExchange mxExchange = ExExchange.None;
+        private string msSymbol = "";
         private double mdmarket_id = 0;
         private double mdlast_trade = 0;
         private double mdlast_sell = 0;
@@ -158,7 +157,7 @@ namespace org.auroracoin.aurcore.stocks
             try
             {
                 stock.Exchange = ExExchange.CryptoRush;
-                stock.Symbol = "AUR";
+                stock.Symbol = "BTC_AUR";
                 //
                 stock.Volume = crush.volume_base_24h;
                 stock.LastTrade = crush.last_trade;

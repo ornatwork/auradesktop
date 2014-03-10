@@ -27,7 +27,9 @@ namespace org.auroracoin.aurcore.stocks
             {
                 Price =  pdPrice;
                 Shares = pdShares;
-                AsOf = DateTime.Parse( psTime );
+                DateTime tmp = DateTime.MinValue;
+                if( DateTime.TryParse( psAsOf + " " + psTime, out tmp ) )
+                    AsOf = tmp;
                 OsId = psId.ToString();
             }
             catch (Exception ex)

@@ -131,17 +131,23 @@ namespace org.auroracoin.aurcore.stocks
             try
             {
                 stock.Exchange = ExExchange.Cryptsy;
-                stock.Symbol = crush.primarycode;
+                stock.Symbol = "BTC_AUR";
                 //
                 stock.Volume = crush.volume;
                 stock.LastTrade = crush.lasttradeprice;
                 stock.Price = crush.lasttradeprice;
                 stock.Id = crush.market_id;
                 
-                // Recent trades 
+                // Recent trades, have to reverse the list as extracting the orders  
+                /*
+                for (int i = crush.recenttrades.Count - 1; i >= 0; i--)
+                {
+                    CxCryptsyRecentTrades trade = crush.recenttrades[i];
+                    stock.RecentTrades.Add(new CxStockOrder(trade.price, trade.quantity, trade.time, trade.id, ""));
+                }*/
                 foreach( CxCryptsyRecentTrades trade in crush.recenttrades )               
                 {
-                    stock.RecentTrades.Add( new CxStockOrder(trade.price, trade.quantity, trade.time, trade.id, trade.time) );
+                    stock.RecentTrades.Add( new CxStockOrder(trade.price, trade.quantity, trade.time, trade.id, "") );
                 }
                 // REMEBER WHEN ADDING NEW PROPERTIES, ADD TO THE CLONE ALSO !!!!!!
                 // REMEBER WHEN ADDING NEW PROPERTIES, ADD TO THE CLONE ALSO !!!!!!

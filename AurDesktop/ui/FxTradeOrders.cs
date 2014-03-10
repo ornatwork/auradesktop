@@ -247,10 +247,6 @@ namespace org.auroracoin.desktop.ui
                 dSellValue += CxUtil.getDouble(item.SubItems[4].Text) * tmp;
             }
 
-            // Buys 
-            this.lbBuysShares.Text = "$" + dBuyValue.ToString(CxUtil.FORMAT_DOUBLE) + " / " + dBuyShares.ToString(CxUtil.FORMAT_INT);
-            // Sells
-            this.lbSellsShares.Text = "$" + dSellValue.ToString(CxUtil.FORMAT_DOUBLE) + " / " + dSellShares.ToString(CxUtil.FORMAT_INT);
         }
 
         // Build the Chart
