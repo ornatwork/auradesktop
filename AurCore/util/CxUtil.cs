@@ -471,17 +471,6 @@ namespace org.auroracoin.aurcore.util
             return dtAsOf.ToString("hh:mm:ss:ffff");
         }
 
-
-
-        // Util methoods
-        public static ExSport getSport(string psText)
-        {
-            if (getString(psText).Equals(string.Empty))
-                return ExSport.None;
-            else
-                return (ExSport)Enum.Parse(typeof(ExSport), psText);
-        }
-
         public static DateTime getDateTime(string psText)
         {
             if (getString(psText).Equals(string.Empty))

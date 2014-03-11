@@ -11,7 +11,6 @@ namespace org.auroracoin.aurcore.stocks
     {
         //
         private string msSymbol = string.Empty;
-        public ExSport mxSport = ExSport.None;
         private double mdChange = 0;
         private double mdVolume = 0;
         private double mdBid = 0;
@@ -60,11 +59,6 @@ namespace org.auroracoin.aurcore.stocks
             get { return FirstName.ToLower() + "_" + LastName.ToLower(); }
         }
 
-        public ExSport Sport 
-        {
-            get{ return mxSport; }
-            set{ mxSport = value; }
-        }
 
         public double Change 
         {
@@ -131,7 +125,6 @@ namespace org.auroracoin.aurcore.stocks
                 Symbol = CxUtil.getNodeText(pxNode, "Symbol");
                 FirstName = CxUtil.getNodeText(pxNode, "FirstName");
                 LastName = CxUtil.getNodeText(pxNode, "LastName");
-                Sport = CxUtil.getSport(CxUtil.getNodeText(pxNode, "Sport"));
                 IPODate = CxUtil.getDateTime(CxUtil.getNodeText(pxNode, "IPODate"));
                 PictureLink = CxUtil.getNodeText(pxNode, "Photo85x85");
                 // Set weblink for the stock, on the trading tab
@@ -186,7 +179,6 @@ namespace org.auroracoin.aurcore.stocks
             stRet.Price = this.Price;
             //stRet.Shares = this.Shares;
             stRet.TotalShares = this.TotalShares;
-            stRet.Sport = this.Sport;
             stRet.Symbol = this.Symbol;
             stRet.TradeDateTime = this.TradeDateTime;
             stRet.Volume = this.Volume;

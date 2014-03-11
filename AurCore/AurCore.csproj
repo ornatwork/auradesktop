@@ -61,8 +61,6 @@
     <Compile Include="stocks\CxCryptoRush.cs" />
     <Compile Include="stocks\CxMarketStock.cs" />
     <Compile Include="stocks\CxStockTrigger.cs" />
-    <Compile Include="stocks\ExIpoStatus.cs" />
-    <Compile Include="stocks\CxIpoStock.cs" />
     <Compile Include="stocks\ExAction.cs" />
     <Compile Include="stocks\CxStockOrderList.cs" />
     <Compile Include="stocks\CxStockPointList.cs" />
@@ -71,7 +69,6 @@
     <Compile Include="stocks\CxStock.cs" />
     <Compile Include="stocks\CxStockPointPairList.cs" />
     <Compile Include="stocks\ExExchange.cs" />
-    <Compile Include="stocks\ExSport.cs" />
     <Compile Include="util\CxIniFile.cs" />
     <Compile Include="util\CxNumberComparer.cs" />
     <Compile Include="util\CxUtil.cs" />

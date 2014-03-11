@@ -29,6 +29,7 @@ namespace org.auroracoin.desktop.core
         private static string sessionID = string.Empty;
         //private static WxGeneral mWebService = new WxGeneral();
         public const string EMAIL_SUCCESSFULLY_SENT = "Your email was sent successfully.";
+        private const string WEB_PING = "http://www.flippertest.biz/ping.php";
 
         static CxDeskUtil()
         {
@@ -1041,7 +1042,7 @@ namespace org.auroracoin.desktop.core
         }
 
 
-        /*
+        
         // Checks to see if there is a new version of the program available for download
         // version in the format 0.0.0.85
         public static bool newVersionAvailable(string psVersion)
@@ -1058,72 +1059,30 @@ namespace org.auroracoin.desktop.core
                 string machine = Environment.MachineName;
                 string sPing = "os=" + os.Platform + "," + sVer + CxUtil.AND + "clr=" + sRuntime + CxUtil.AND +
                     "machine=" + machine + CxUtil.AND + "appver=" + psVersion;
-
+                // ping home
+                CxUtil.sendHttpPingPOST(WEB_PING, sPing);
                 // check for version 
-                XmlNode xStatuses = mWebService.getStatuses(CxGlobal.KEY, os.Platform + "," + sVer,
-                                                                sRuntime, machine, psVersion, string.Empty);
+                //XmlNode xStatuses = mWebService.getStatuses(CxGlobal.KEY, os.Platform + "," + sVer,
+                //                                            sRuntime, machine, psVersion, string.Empty);
 
                 // Got this from server 
-                string currentDeployedVersion = xStatuses.SelectSingleNode("ver/net").InnerText;
+                //string currentDeployedVersion = xStatuses.SelectSingleNode("ver/net").InnerText;
 
                 // Take out the periods for comparison
-                currentDeployedVersion = currentDeployedVersion.Replace(CxUtil.PERIOD, string.Empty);
-                psVersion = psVersion.Replace(CxUtil.PERIOD, string.Empty);
+                //currentDeployedVersion = currentDeployedVersion.Replace(CxUtil.PERIOD, string.Empty);
+                //psVersion = psVersion.Replace(CxUtil.PERIOD, string.Empty);
 
                 //  If the deployed version on the website is greater than this one, need to upgrade 
-                return CxUtil.getDouble(currentDeployedVersion) > CxUtil.getDouble(psVersion);
+                return false; // CxUtil.getDouble(currentDeployedVersion) > CxUtil.getDouble(psVersion);
             }
             catch (Exception ex)
             {
                 Logger.Error("Err=" + ex); 
-                //Console.WriteLine("Err=" + ex);
             }
 
             return false;
         }
-        */
-
-
-        // Checks the OS API feed for isseud ipos
-        public static IList<CxIpoStock> getIpoStocks()
-        {
-            // Those are all of the stocks 
-            IList<CxIpoStock> rList = new List<CxIpoStock>();
-
-            try
-            {
-                string thexml = CxUtil.getWebPage( "" );
-                //
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(thexml);
-
-                XmlNodeList nodes = doc.SelectNodes("methodResponse/upcoming/player");
-                foreach (XmlNode nod in nodes)
-                {
-                    CxIpoStock ipstock = new CxIpoStock();
-                    //
-                    ipstock.Symbol = CxUtil.getNodeText(nod, "symbol");
-                    //
-                    string[] names = CxUtil.getNodeText(nod, "name").Split(CxUtil.SPACE[0]);
-                    ipstock.FirstName = names[0];
-                    ipstock.LastName = names[1];
-                    //
-                    ipstock.Rank = int.Parse(CxUtil.getNodeText(nod, "rank"));
-                    ipstock.Status = (ExIpoStatus)Enum.Parse(typeof(ExIpoStatus), CxUtil.getNodeText(nod, "status") );
-                    
-                    //
-                    rList.Add(ipstock);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error("Err=" + ex); 
-                //Console.WriteLine(ex);
-            }
-
-
-            return rList;
-        }
+        
 
 
     }  // EOC

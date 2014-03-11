@@ -460,11 +460,10 @@ namespace org.auroracoin.desktop.ui
                 string sVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
                 // version in the format 0.0.0.85
-                //bool bNewVersion = false; 
+                bool bNewVersion = false; 
+                bNewVersion = CxDeskUtil.newVersionAvailable(sVersion);
+                
                 /*
-                bool bNewVersion = CxDeskUtil.newVersionAvailable(sVersion);
-                
-                
                 // if there is a new version attempt download and optionally 
                 // install it for the user 
                 if (bNewVersion)

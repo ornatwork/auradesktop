@@ -18,7 +18,6 @@ namespace org.auroracoin.desktop.ui
     public partial class FxUser : Form
     {
         private IList<CxMarketStock> mlStocks = new List<CxMarketStock>();
-        private string WARN_STRING = "Your Buy price is higher than the warning price set in the config screen of ${0}, do you want to continue with the order ?";
         private string ADJUST_PRICE = "The price must be adjusted before submitting a trade.";
         private string TRADE_WARNING_CAPTION = "Trade warning";
         //
